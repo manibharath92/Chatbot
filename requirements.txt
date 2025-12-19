@@ -1,1 +1,1 @@
-pip install rasa==3.15.0
+rasa==3.15.0;
