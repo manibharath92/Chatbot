@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Rasa Bot</title>
+  <script src="https://cdn.jsdelivr.net/npm/rasa-webchat/lib/index.js"></script>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background-color: #f5f5f5;
+      font-family: Arial, sans-serif;
+    }
+    #webchat {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 350px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <div id="webchat"></div>
+
+  <script>
+    WebChat.default({
+       socketUrl: "https://5005-glorious-space-rotary-phone-q7xpppppq6x6f9vpj.githubpreview.dev",
+      title: "My Rasa Bot",
+      subtitle: "How can I help you?",
+      inputTextFieldHint: "Type a message...",
+      customData: {"language": "en"},  // optional
+      showFullScreenButton: true,
+      showCloseButton: true
+    }, document.getElementById('webchat'));
+  </script>
+</body>
+</html>
+

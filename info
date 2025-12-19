@@ -1,0 +1,20 @@
+Core Commands to Run Rasa
+=========================
+1. rasa init
+    Initialize a Project: Use rasa init in an empty directory to create a default "Moodbot" project with all necessary files.
+2.Set Enivirionment Variable
+    export RASA_LICENSE='eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkMjM2ZDM2Yi01NGRkLTQzNjMtOTZiNi0xNzc5NDM1MjI0YjgiLCJpYXQiOjE3NjQzMzA0OTEsIm5iZiI6MTc2NDMzMDQ5MSwic2NvcGUiOiJyYXNhOnBybyByYXNhOnBybzpjaGFtcGlvbiByYXNhOnZvaWNlIiwiZXhwIjoxODU5MDI0ODkxLCJlbWFpbCI6ImJoYXJhdGhncHRjQGdtYWlsLmNvbSIsImNvbXBhbnkiOiJSYXNhIENoYW1waW9ucyJ9.odVrNYdCjYxnS_Ij1SSBsRbJQ9JG0yRokS9lftYGHA5cvYu8eKvLppnp9jzTnKbZ3xVg2jrdNrJ_FfxcBILL8OjIc-1b-MYbEyrqn2ZpsP2ChWYpKMeJngpgTOz2UYXM8tJFYCuRQ9aJJZVHG1dtuFJiIh1g186zAx8X2pfZfbYHxlzpt7jYJiUa8CErhNcooxwuMBKDCt-qXhj461CQoOr4rheD5yU9omDTYsrJrPqWadKJFJMYKcmiuDXIrCmqhp63BPr_O5zYUJnZTJVsmqY8MAi0sN5rOIVaRPEPJTee0vTIjtppDZp7cWowYuJ7OLZTCDIyqRpsrv2jZh60JA'
+
+3.rasa train
+    Train a Model: Run rasa train to train a model using your NLU data and stories.
+4.rasa run
+    Start the Server: Use rasa run to start a Rasa server that listens for incoming messages via HTTP.
+5.rasa shell
+    Chat via Terminal: Use rasa shell (or rasa inspect in newer versions) to interact with your assistant directly in the command line.
+6.rasa run -m models --enable-api --cors "*" --port 5005
+    Run Action Server: Execute rasa run actions to start the server for your custom Python code (e.g., fetching weather data or checking a database).
+
+7. Enable rasa UI
+    cd ./tutorial/webchat/
+    python -m http.server 8080
+
