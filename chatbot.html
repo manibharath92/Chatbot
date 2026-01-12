@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ICE CREAM CHATBOT</title>
+    <style>
+        body {
+            font-family: Georgia;
+            font-weight: bold;
+            background-color: #fce4ec;
+        }
+        
+        .title {
+            font-size: 90px;           
+            font-weight: bold;
+            color: #ff1a66;            
+            font-family: 'Trebuchet MS', sans-serif;
+            letter-spacing: 2px;
+        }
+        .chatbox {
+            width: 890px;
+            margin: auto;
+            margin-top: 50px;
+            background: green;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 4px 4px 12px #aaa;
+        }
+        #chat {
+            height: 500px;
+            overflow-y: auto;
+            border: 3px solid #ccc;
+            padding: 20px;
+        }
+        input {
+            width: 85%;
+            padding: 10px;
+        }
+        button {
+            padding: 8px;
+            background-color: #e73370;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #e73370;
+        }
+
+
+    </style>
+
+
+            <style>
+input{
+  width: 90%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+}
+
+button{
+  padding: 8px 14px;
+  background: #ff4d88;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover{
+  background: #ff1a66;
+}
+</style>
+
+          <style>
+.chat-box{
+  height: 280px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
+  background-image: url("icee cream.PNG");
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+</style>
+
+
+         <style>
+.chat-container{
+  width: 480px;
+  margin: 70px auto;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  padding: 15px;
+}
+</style>
+
+
+
+</head>
+<body>
+
+<div class="chatbox">
+    <h3>&#127848; ICE CREAM CHATBOT &#129302;</h3>
+    <div id="chat" class="chat-box"></div><br>
+    <input type="text" id="userInput" placeholder="Type here...">
+    <button onclick="send()">Send</button>
+</div>
+
+<script>
+const flavors = ["Vanilla", "Chocolate", "Strawberry", "Mango", "Butterscotch"];
+const containers = ["Cup", "Cone"];
+const toppings = ["Nuts", "Choco Chips", "Caramel", "Sprinkles"];
+const prices = { iceCream: 50, topping: 10 };
+const sizes = [ "Small", "Medium", "Large" ];
+
+
+function send() {
+    let user = document.getElementById("userInput").value.toLowerCase().trim();
+    let chat = document.getElementById("chat");
+    let hour = new Date().getHours();
+
+    if(user === "") return;
+
+    chat.innerHTML += "<b>You:</b> " + user + "<br>";
+
+    let reply = "";
+
+    if (user.includes("hi") || user.includes("hello") || user.includes("hey")) {
+        reply = "&#128523;Hello! Welcome to our Ice Cream Shop &#128591;<br>Type MENU to see our options.";
+    }
+    else if (user.includes("menu")) {
+        reply = " Flavors: " + flavors.join(", ") + "<br>" +
+                " Containers: " + containers.join(", ") + "<br>" +
+                " Toppings: " + toppings.join(", ");
+                "&#128207; Sizes: " + sizes.join(", ");
+
+
+                 
+    }
+    else if (user.includes("da") || user.includes("dii") || user.includes("chlo")) {
+        reply = " Sollu chlooo, enna venum? Ice cream order pannalama?";
+    }
+    else if (user.includes("how are you")) {
+        reply = "&#128523;I'm cool like ice cream! How can I help you?";
+    }
+    else if (user.includes("summa")) {
+        reply = " Summa irundhaalum ice cream saaptu chill pannalaama &#127848";
+    }
+    else if (user.includes("bore")) {
+        reply = " Bore ah? Ice cream mood change pannum da ?? Order pannalama?";
+    }
+    else if (user.includes("tired") || user.includes("stress")) {
+        reply = " Ayyoo paavam. Oru chocolate ice cream stress reduce pannum ??";
+    }
+    else if (user.includes("happy")) {
+        reply = "&#128523; Super ! Happiness-ku strawberry ice cream best &#127827";
+    }
+    else if (user.includes("romba pasikuthu") || user.includes("hungry")) {
+        reply = " Seri seri! Ice cream select pannunga fast-aa &#127848";
+    }
+    else if (user.includes("recommend") || user.includes("suggest")) {
+        reply = " My suggestion: Chocolate + Choco chips in cone ??";
+    }
+    else if (user.includes("change the order")) {
+        reply = " Seri , order change pannalaam. Flavor sollunga";
+    }
+    else if (user.includes("order") || user.includes("buy")) {
+        reply = "&#127848; Sure! Which flavor you want? Vanilla, Chocolate, Strawberry";
+    }
+    else if (user.includes("container")) {
+        reply = "We have " + containers.join(" and ") + ". Which one do you prefer?";
+    }
+    else if (user.includes("topping")) {
+        reply = "Available toppings: " + toppings.join(", ");
+    }
+    else if (user.includes("sizes")) {
+        reply = "Available sizes: " + sizes.join(", ");
+    }
+     else if (user.includes("chocolate")) {
+        reply = "Great choice! &#127851; Chocolate selected. Do you want Cup or Cone?";
+    }
+     else if (user.includes("mango")) {
+        reply = "&#128525;Great choice! &#129389; mango selected. Do you want Cup or Cone?";
+    }
+    else if (user.includes("vanilla")) {
+        reply = " &#128525;Nice! &#127846; Vanilla selected. Cup or Cone?";
+    }
+     else if (user.includes("strawberry")) {
+        reply = "&#128523;Yummy! &#127827; Strawberry selected. Cup or Cone?";
+    }
+    else if (user.includes("price")) {
+        reply = `Ice Cream: ?${prices.iceCream} + ?${prices.topping} per topping`;
+    }
+    else if (user.includes("small")) {
+        reply = " Small size ?? Container venuma? Cup or Cone";
+    }
+    else if (user.includes("medium")) {
+        reply = "&#127847; Medium size ?? Cup or Cone choose pannunga";
+    }
+    else if (user.includes("large")) {
+        reply = "&#127847; ?? Cup or Cone choose pannunga";
+    }
+    else if (user.includes(" for order")) {
+        reply = "Your ice cream order is placed successfully! ????<br>Thank you for choosing us!";
+    }
+    else if (user.includes("flavor")) {
+        reply = "We have these flavors available: " + flavors.join(", ");
+    }
+    else if (user.includes("popular")) {
+        reply = "Our most popular flavors are Chocolate &#127851; and Mango &#129389;!";
+    }
+    else if (user.includes("hours") || user.includes("open")) {
+        reply = " We are open from 10 AM to 10 PM every day!";
+    }
+    else if (user.includes("offer") || user.includes("discount")) {
+        reply = " Today we have a 10% discount on orders above ?200!";
+    }
+    else if (user.includes("delivery")) {
+        reply = " We deliver within 5 km radius. Delivery charges may apply.";
+    }
+    else if (user.includes("custom")) {
+        reply = "Yes! You can create your custom ice cream with your favorite flavor, container, and toppings!";
+    }
+    else if (user.includes("help") || user.includes("options")) {
+        reply = "You can ask me about:<br>- Menu<br>- Flavors<br>- Containers<br>- Toppings<br>- Price<br>- Place Order";
+    }
+    else if (user.includes("sprinkles")) {
+        reply = "Sprinkles added ??. Your ice cream order is confirmed ??";
+    }
+    else if (user.includes("nuts")) {
+        reply = "Nuts added &#128523;. Your ice cream order is confirmed ??";
+    }
+    else if (user.includes("chocolate chips")) {
+        reply = "Chocolate chips added &#128523;. Your ice cream order is confirmed ??";
+    }
+    else if (user.includes("cup")) {
+        reply = "Cup selected ?. Do you want toppings? (Sprinkles / Nuts / Chocolate Chips / No)";
+    }
+    else if (user.includes("cone")) {
+        reply = "Cone selected ??. Do you want toppings? (Sprinkles / Nuts / Chocolate Chips / No)";
+    }
+    else if (user.includes("no")) {
+        reply = "No toppings ??. Your ice cream order is confirmed ??";
+    }
+    else if (user.includes("yes")){
+        reply = "yes okieee. which one you like this ? (nuts / chocolate chips / yes)";
+    }
+    else if (user.includes("final")) {
+        reply = "your order is confirmed .";
+    }
+    else if (user.includes("thank")) {
+        reply = "You're welcome! &#10084; Enjoy your ice cream!";
+    }
+    else if (user.includes("bye")) {
+        reply = " Bye! Sweet day irukkattum ??";
+    }
+    else if (user.includes("time")) {
+    let now = new Date();
+    reply = "Current time is ? " + now.toLocaleTimeString();
+    }
+    else {
+        reply = "Sorry, I didn't get that. You can type: menu / flavor / container / topping / price / sizes / order / help";
+    }
+
+    chat.innerHTML += "<b>Bot:</b> " + reply + "<br><br>";
+    chat.scrollTop = chat.scrollHeight; // auto scroll to latest message
+    document.getElementById("userInput").value = "";
+}
+</script>
+
+</body>
+</html>

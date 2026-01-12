@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ID Create & View</title>
+  <style>
+    body {
+      font-family: Arial;
+      text-align: center;
+      margin-top: 80px;
+    }
+    input {
+      padding: 8px;
+      width: 200px;
+    }
+    button {
+      padding: 8px 15px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    .view-box {
+      margin-top: 20px;
+      font-size: 18px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Create Your ID</h2>
+
+  <input type="text" id="userId" placeholder="Enter ID">
+  <br><br>
+
+  <button onclick="showId()">View ID</button>
+
+  <div class="view-box" id="result"></div>
+
+  <script>
+    function showId() {
+      var id = document.getElementById("userId").value;
+
+      if (id === "") {
+        document.getElementById("result").innerHTML = "? Please enter an ID";
+      } else {
+        document.getElementById("result").innerHTML =
+          "? Your ID is: <b>" + id + "</b>";
+      }
+    }
+  </script>
+
+</body>
+</html>
